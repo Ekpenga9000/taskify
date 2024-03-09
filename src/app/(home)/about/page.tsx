@@ -2,8 +2,8 @@ import React from "react";
 
 const page = () => {
   return (
-    <section>
-      <h1 className="text-2xl font-semibold">About Taskify</h1>
+    <section className="p-10">
+      <h1 className="text-2xl font-semibold mb-4">About Taskify</h1>
       <p className="mb-4">
         Taskify is not just another task management app; it's your portal to
         unlocking productivity potential like never before. Seamlessly blending
