@@ -8,6 +8,9 @@ const Header = () => {
         <Link href={"/"}>Taskify</Link>
         <ul className="flex space-x-4">
           <li>
+            <Link href="/about">About</Link>
+          </li>
+          <li>
             <Link href="/list">My Lists</Link>
           </li>
           <li>
