@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="bg-blue-700 text-white p-4">
       <nav className="flex justify-between">
-        <Link href={"/"}>My Todo List</Link>
+        <Link href={"/"}>Taskify</Link>
         <ul className="flex space-x-4">
           <li>
             <Link href="/list">My Lists</Link>
