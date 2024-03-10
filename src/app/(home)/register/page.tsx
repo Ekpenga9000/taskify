@@ -1,8 +1,11 @@
 import React from 'react'
+import AuthenticationComponent from "@/components/AuthenticationComponent";
 
 const RegistrationPage = () => {
   return (
-    <div>RegistrationPage</div>
+    <section className="flex justify-center items-center h-screen">
+    <AuthenticationComponent name="Registration" type="Registration"/>
+  </section>
   )
 }
 

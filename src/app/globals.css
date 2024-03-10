@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.tester{
+    border: 1px solid red;
+}
