@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 import { Container } from "@/components/Container";
 import "./globals.css";
 import Footer from "@/components/Footer";
-import HeaderMain from "@/components/HeaderMain";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,6 +15,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     <html lang="en">
       <body className={`${inter.className} bg-zinc-100 text-zinc-900`}>
