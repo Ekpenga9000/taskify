@@ -1,7 +1,8 @@
 "use server";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { UserRegistration, RegistrationFeeback } from "@/interfaces/interfaces";
 import { db } from "@/lib/database";
+import { findUserByEmail } from "@/data/user";
 
 // This action file is used to register the user and send the user's information to the server.
 export const registerUser = async (
@@ -19,11 +20,7 @@ export const registerUser = async (
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const existingUser = await db.user.findUnique({
-    where: {
-      email,
-    },
-  });
+  const existingUser = await findUserByEmail(email);
 
   if (existingUser) {
     return { error: "User already exists. Please login." };
