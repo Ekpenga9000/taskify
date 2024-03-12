@@ -1,3 +1,4 @@
+import RankList from "@/components/RankList";
 import React from "react";
 
 const page = () => {
@@ -23,6 +24,23 @@ const page = () => {
         accomplishment. Join Taskify today and level up your productivity game
         like never before!
       </p>
+
+      <h2 className="text-2xl font-bold mb-4">Ranking System</h2>
+      <h3 className="text-lg font-bold mb-2">
+        Rank your lists and details of the ranks
+      </h3>
+      <p className="mb-4">
+        Welcome to the enchanted realm of task mastery! As you embark on your
+        journey, completing tasks will earn you mystical ranks, each
+        representing your progress and dedication. Starting as a Novice Task
+        Sprite, you'll ascend through the ranks, gaining wisdom and power with
+        each completed task. Whether you're an Apprentice Task Faerie or a
+        Supreme Task Enigma, your journey towards mastery is filled with magic
+        and wonder. Embrace the enchantment of task completion and watch as your
+        rank illuminates the path to greatness in this mystical world of
+        productivity.
+      </p>
+      <RankList />
     </section>
   );
 };

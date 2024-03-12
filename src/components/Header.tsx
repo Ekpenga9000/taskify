@@ -10,13 +10,13 @@ const Header = () => {
         </Link>
         <ul className="flex space-x-4">
           <li>
-            <Link href="/list">My Tasks</Link>
+            <Link href="/dashbaord/list">My Tasks</Link>
           </li>
           <li>
-            <Link href="/completed">Completed</Link>
+            <Link href="/dashboard/completed">Completed</Link>
           </li>
           <li>
-            <Link href={"/rank"}>Rank</Link>
+            <Link href={"/dashboard/rank"}>Rank</Link>
           </li>
         </ul>
       </div>

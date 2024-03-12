@@ -3,9 +3,9 @@ import HeaderMain from "@/components/HeaderMain";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <main>
+    <section>
       <HeaderMain />
       {children}
-    </main>
+    </section>
   );
 };

@@ -6,6 +6,8 @@ import { AuthenticationComponentProps } from "@/interfaces/interfaces";
 import Link from "next/link";
 import { UserRegistration, RegistrationFeeback } from "@/interfaces/interfaces";
 import { registerUser } from "@/app/actions/registration";
+import { loginUser } from "@/app/actions/login";
+
 const AuthenticationComponent = ({
   name,
   type,
@@ -69,8 +71,18 @@ const AuthenticationComponent = ({
           return;
         }
 
-        // Call the server function to login the user
-        console.log("Login form submitted", form); // Send form data to server
+        const loginDetails = {
+          email,
+          password,
+        };
+        
+        const validateValues = await loginUser(loginDetails);
+
+        if (!validateValues.success) {
+          setError("Invalid email or password");
+          return;
+        }
+
         setForm(clearForm);
         setError("");
         break;
