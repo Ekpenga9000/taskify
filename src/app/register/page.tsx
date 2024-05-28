@@ -1,7 +1,9 @@
+import RegForm from "./Form";
+
 const Register = () => {
     return (
         <section>
-            Register page
+            <RegForm/>
         </section>
     )
 }

@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.signup{
+.signup {
   @apply text-blue-700 bg-white font-semibold py-1 px-4 rounded;
 }
 
+.form-input {
+  @apply border py-2 px-2 block mb-4 w-full rounded;
+}
+
+.form-textArea {
+  @apply border py-2 px-2 block mb-4 w-full rounded min-h-40;
+  resize: vertical;
+}

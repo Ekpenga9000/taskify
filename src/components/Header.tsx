@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="bg-blue-700 text-white p-4">
+    <header className="bg-slate-700 text-white p-4">
       <nav className="flex justify-between items-center">
         <Link href={"/"}>Taskify</Link>
         <ul className="flex space-x-4 text-sm">
