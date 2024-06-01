@@ -21,7 +21,9 @@ const Header = () => {
           </li>
         </ul>
         <ul className="flex items-center gap-4 text-sm">
-          <li className="cursor-pointer">Login</li>
+          <li className="cursor-pointer">
+            <Link href={"/login"}>Login</Link>
+          </li>
           <li className="cursor-pointer signup">
             <Link href={"/register"}>Sign up</Link>
           </li>
