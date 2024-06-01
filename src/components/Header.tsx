@@ -1,9 +1,10 @@
 import React from "react";
 import Link from "next/link";
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="bg-slate-700 text-white p-4">
+    <header className="bg-white text-black font-semibold p-4">
       <nav className="flex justify-between items-center">
         <Link href={"/"}>Taskify</Link>
         <ul className="flex space-x-4 text-sm">
@@ -22,7 +23,7 @@ const Header = () => {
         </ul>
         <ul className="flex items-center gap-4 text-sm">
           <li className="cursor-pointer">
-            <Link href={"/login"}>Login</Link>
+            <Link href={"/login"} className="login"><FaUser />Login</Link>
           </li>
           <li className="cursor-pointer signup">
             <Link href={"/register"}>Sign up</Link>

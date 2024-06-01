@@ -4,6 +4,7 @@ import { Container } from "@/components/Container";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Toaster } from "@/components/ui/toaster";
+import Footer from "@/components/Footer";
 
 // export default function RootLayout({ children }) {
 //   return (
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Toaster />
+          <Footer/>
         </Container>
       </body>
     </html>
