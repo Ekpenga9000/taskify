@@ -9,7 +9,8 @@ export interface IUser extends Document{
     adventurerType: string; 
     rank: number;
     role: string;
-    avatar: {
+    motivation: string; 
+    avatar?: {
         public_id: string;
         url: string;
     }
@@ -44,6 +45,10 @@ const userSchema: Schema<IUser> = new Schema<IUser>({
     rank: {
         type: Number, 
         default: 1
+    },
+    motivation: {
+        type: String,
+        default: "To be the best adventurer ever!"
     },
     role: {
         type: String,

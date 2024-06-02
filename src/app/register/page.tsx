@@ -1,4 +1,8 @@
-import RegForm from "./Form";
+import dynamic from "next/dynamic";
+
+const RegForm = dynamic(() => import("./Form"), {
+    ssr:false
+});
 
 const Register = () => {
     return (

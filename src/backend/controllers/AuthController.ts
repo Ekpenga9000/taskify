@@ -11,7 +11,7 @@ export const createUser = async (req: NextRequest) => {
       return NextResponse.json({ message: "Please fill all fields" });
     }
 
-    if (password.length > 5) {
+    if (password.length < 5) {
       return NextResponse.json({
         message: "Password should be at least 5 characters",
       });
@@ -21,12 +21,12 @@ export const createUser = async (req: NextRequest) => {
       return NextResponse.json({ message: "Passwords do not match" });
     }
 
-    const isExisitingUser = await userModel.find(email);
+    const isExisitingUser = await userModel.find({email});
 
     if (isExisitingUser.length) {
       return NextResponse.json({
         success: false,
-        message: "User already exists",
+        message: "User already exists, please login",
       });
     }
 

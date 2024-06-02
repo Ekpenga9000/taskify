@@ -1,12 +1,15 @@
-import React from 'react';
-import LoginForm from './Form';
+import dynamic from "next/dynamic";
+
+const LoginForm = dynamic(() => import("./Form"), {
+  ssr: false,
+});
 
 const page = () => {
   return (
-      <section>
-          <LoginForm/>
+    <section>
+      <LoginForm />
     </section>
-  )
-}
+  );
+};
 
-export default page
+export default page;

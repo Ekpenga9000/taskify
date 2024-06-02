@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Container } from "@/components/Container";
 import "./globals.css";
-import Header from "@/components/Header";
 import { Toaster } from "@/components/ui/toaster";
 import Footer from "@/components/Footer";
 
@@ -32,12 +31,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+          rel="stylesheet"
+        />
+      </head>
       <body className={`${inter.className} bg-zinc-100 text-zinc-900`}>
         <Container>
-          <Header />
           {children}
           <Toaster />
-          <Footer/>
+          <Footer />
         </Container>
       </body>
     </html>

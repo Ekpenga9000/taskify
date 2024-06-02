@@ -1,8 +1,12 @@
-import React from "react";
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import { FaUser } from "react-icons/fa";
+import Logout from "./Logout";
 
 const Header = () => {
+  const [token, setToken] = useState(localStorage.getItem("token"));
+
   return (
     <header className="bg-white text-black font-semibold p-4">
       <nav className="flex justify-between items-center">
@@ -22,12 +26,24 @@ const Header = () => {
           </li>
         </ul>
         <ul className="flex items-center gap-4 text-sm">
-          <li className="cursor-pointer">
-            <Link href={"/login"} className="login"><FaUser />Login</Link>
-          </li>
-          <li className="cursor-pointer signup">
-            <Link href={"/register"}>Sign up</Link>
-          </li>
+          {!token && (
+            <li className="cursor-pointer">
+              <Link href={"/login"} className="login">
+                <FaUser />
+                Login
+              </Link>
+            </li>
+          )}
+          {!token && (
+            <li className="cursor-pointer signup">
+              <Link href={"/register"}>Sign up</Link>
+            </li>
+          )}
+          {token && (
+            <li onClick={() => setToken("")}>
+              <Logout />
+            </li>
+          )}
         </ul>
       </nav>
     </header>
