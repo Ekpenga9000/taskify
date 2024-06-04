@@ -6,7 +6,6 @@ export interface IUser extends Document{
     email: string;
     password: string; 
     coins: number; 
-    adventurerType: string; 
     rank: number;
     role: string;
     motivation: string; 
@@ -14,6 +13,7 @@ export interface IUser extends Document{
         public_id: string;
         url: string;
     }
+    createdAt: Date
 }; 
 
 const userSchema: Schema<IUser> = new Schema<IUser>({
@@ -37,11 +37,6 @@ const userSchema: Schema<IUser> = new Schema<IUser>({
         type: Number, 
         default: 0
     },
-    adventurerType: {
-        type: String, 
-        enum: ["Warrior", "Mage", "Archer"],
-        default: "Warrior"
-    },
     rank: {
         type: Number, 
         default: 1
@@ -59,8 +54,7 @@ const userSchema: Schema<IUser> = new Schema<IUser>({
         public_id: String,
         url: String
     }
-
-});
+}, { timestamps: true });
 
 userSchema.pre<IUser>("save", async function (next) {
     if (!this.isModified("password")) {
